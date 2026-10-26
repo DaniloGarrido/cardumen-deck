@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use Cardumen Deck in your work, please cite this repository."
+title: "Cardumen Deck"
+abstract: "Local Windows dashboard for starting, monitoring, and operating development services."
+type: software
+authors:
+  - name: "Cardumen Deck contributors"
+repository-code: "https://github.com/DaniloGarrido/cardumen-deck"
+url: "https://github.com/DaniloGarrido/cardumen-deck"
+license: MIT
+version: 0.1.0
+date-released: 2026-10-26
+keywords:
+  - tauri
+  - vue
+  - rust
+  - windows
+  - developer-tools
+  - dashboard
+  - local-first

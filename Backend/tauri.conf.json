@@ -1,0 +1,49 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Cardumen Deck",
+  "version": "0.1.0",
+  "identifier": "com.cardumendeck.desktop",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devUrl": "http://localhost:1420",
+    "frontendDist": "../FrontEnd/dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Cardumen Deck",
+        "width": 1000,
+        "height": 700,
+        "minWidth": 600,
+        "minHeight": 450,
+        "resizable": true,
+        "dragDropEnabled": false
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: asset: http://asset.localhost; font-src 'self'; connect-src ipc: http://ipc.localhost https://ipc.localhost; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "icon": ["icons/icon.ico"],
+    "publisher": "Cardumen Deck contributors",
+    "copyright": "Copyright © 2026 Cardumen Deck contributors",
+    "category": "DeveloperTool",
+    "shortDescription": "Dashboard local para servicios de desarrollo",
+    "longDescription": "Dashboard local para Windows que centraliza el arranque, monitoreo y operación de servicios de desarrollo.",
+    "license": "MIT",
+    "licenseFile": "../LICENSE",
+    "windows": {
+      "nsis": {
+        "installerIcon": "icons/icon.ico"
+      }
+    }
+  },
+  "plugins": {
+    "opener": {},
+    "singleInstance": {}
+  }
+}

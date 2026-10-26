@@ -1,0 +1,50 @@
+# Dependencias
+node_modules/
+.opencode/node_modules/
+
+# Build y artefactos
+Backend/target/
+Backend/gen/
+FrontEnd/dist/
+dist/
+coverage/
+*.exe
+*.msi
+*.msix
+*.appx
+*.pdb
+*.profraw
+*.log
+
+# Configuracion local y secretos
+.env
+.env.*
+*.local
+*.pfx
+*.p12
+*.cer
+*.crt
+*.key
+*.pem
+*.jks
+*.keystore
+*.snk
+*.mobileprovision
+
+# Herramientas internas del autor
+vault/
+.opencode/
+.skilldb/
+.githooks/
+release/
+.playwright-mcp/
+
+# Editores y sistema
+.vscode/
+.idea/
+.fleet/
+.history/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.bak

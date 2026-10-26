@@ -1,0 +1,38 @@
+{
+  "name": "cardumen-deck-frontend",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Frontend Vue 3 para Cardumen Deck",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview",
+    "check": "vue-tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@lucide/vue": "^1.61.0",
+    "@tauri-apps/api": "^2",
+    "@tauri-apps/plugin-clipboard-manager": "^2.5.0",
+    "@tauri-apps/plugin-dialog": "^2",
+    "@tauri-apps/plugin-opener": "^2",
+    "vue": "^3.5.44"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@tauri-apps/cli": "^2",
+    "@types/node": "^24",
+    "@vitejs/plugin-vue": "^6",
+    "@vue/tsconfig": "^0",
+    "eslint": "^9",
+    "eslint-plugin-vue": "^10",
+    "globals": "^14.0.0",
+    "typescript": "~6",
+    "typescript-eslint": "^8.72.1",
+    "vite": "^8",
+    "vue-tsc": "^3"
+  }
+}

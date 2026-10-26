@@ -1,0 +1,18 @@
+{
+  "identifier": "default",
+  "description": "Capacidades por defecto para Cardumen Deck",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    "clipboard-manager:allow-read-text",
+    "clipboard-manager:allow-write-text",
+    "dialog:allow-open",
+    "dialog:allow-message",
+    "opener:allow-open-path",
+    "opener:allow-open-url",
+    "opener:allow-default-urls",
+    "core:app:allow-exit",
+    "core:window:allow-set-title",
+    "core:window:allow-destroy"
+  ]
+}

@@ -1,0 +1,121 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build Windows portable and installer
+    runs-on: windows-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+
+      - name: Cache Rust
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: Backend -> target
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify tag matches app version
+        shell: pwsh
+        run: |
+          $version = (Get-Content Backend/tauri.conf.json -Raw | ConvertFrom-Json).version
+          if ("v$version" -ne "${{ github.ref_name }}") {
+            throw "Tag ${{ github.ref_name }} does not match app version v$version"
+          }
+
+      - name: Lint frontend
+        run: npm --workspace FrontEnd run lint
+
+      - name: Type check
+        run: npm --workspace FrontEnd run check
+
+      - name: Check Rust formatting
+        run: cargo fmt --manifest-path Backend/Cargo.toml -- --check
+
+      - name: Clippy
+        run: cargo clippy --manifest-path Backend/Cargo.toml --all-targets -- -D warnings
+
+      - name: Test backend
+        run: cargo test --manifest-path Backend/Cargo.toml --lib
+
+      - name: Build portable and installer
+        run: npm run build
+
+      # TODO(SignPath): una vez aprobado, firmar los ejecutables antes de
+      # calcular los hashes. Ver CODE_SIGNING.md.
+      #
+      # - name: Sign with SignPath
+      #   uses: signpath/github-action-submit-signing-request@v1
+      #   with:
+      #     api-token: ${{ secrets.SIGNPATH_API_TOKEN }}
+      #     organization-id: ${{ vars.SIGNPATH_ORGANIZATION_ID }}
+      #     project-slug: cardumen-deck
+      #     signing-policy-slug: release-signing
+      #     artifact-configuration-slug: windows-x64
+      #     wait-for-completion: true
+      #     output-artifact-directory: signed
+
+      - name: Prepare release artifacts
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path dist | Out-Null
+          $tag = "${{ github.ref_name }}"
+
+          $portable = "dist/CardumenDeck-$tag-windows-x64-portable.exe"
+          Copy-Item "Backend/target/release/cardumen-deck.exe" $portable
+
+          $setup = Get-ChildItem "Backend/target/release/bundle/nsis/*-setup.exe" | Select-Object -First 1
+          if (-not $setup) {
+            throw "NSIS installer not found"
+          }
+          $installer = "dist/CardumenDeck-$tag-windows-x64-setup.exe"
+          Copy-Item $setup.FullName $installer
+
+          $hashes = @(
+            "$((Get-FileHash $portable -Algorithm SHA256).Hash)  $(Split-Path $portable -Leaf)"
+            "$((Get-FileHash $installer -Algorithm SHA256).Hash)  $(Split-Path $installer -Leaf)"
+          )
+          $hashes | Set-Content "dist/SHA256SUMS.txt" -Encoding ascii
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: CardumenDeck-${{ github.ref_name }}-windows-x64
+          path: dist/*
+          if-no-files-found: error
+
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*
+          generate_release_notes: true
+          draft: true
+          prerelease: true
+          fail_on_unmatched_files: true

@@ -1,0 +1,30 @@
+{
+  "name": "cardumen-deck",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Dashboard local para gestionar servicios de desarrollo en Windows",
+  "license": "MIT",
+  "workspaces": [
+    "FrontEnd"
+  ],
+  "scripts": {
+    "dev": "cross-env TAURI_APP_PATH=Backend TAURI_FRONTEND_PATH=FrontEnd tauri dev",
+    "build": "cross-env TAURI_APP_PATH=Backend TAURI_FRONTEND_PATH=FrontEnd tauri build",
+    "tauri": "tauri",
+    "check": "npm --workspace FrontEnd run check",
+    "lint": "npm --workspace FrontEnd run lint",
+    "lint:fix": "npm --workspace FrontEnd run lint:fix",
+    "fmt": "cargo fmt --manifest-path Backend/Cargo.toml",
+    "clippy": "cargo clippy --manifest-path Backend/Cargo.toml --all-targets -- -D warnings",
+    "test": "cargo test --manifest-path Backend/Cargo.toml --lib"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2",
+    "cross-env": "^7"
+  },
+  "engines": {
+    "node": ">=24",
+    "npm": ">=10"
+  },
+  "packageManager": "npm@12.2.0"
+}

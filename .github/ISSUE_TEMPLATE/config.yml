@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Reportar una vulnerabilidad
+    url: https://github.com/DaniloGarrido/cardumen-deck/security/advisories/new
+    about: Usa un reporte privado. No publiques detalles explotables en un issue.
+  - name: Preguntas y ideas
+    url: https://github.com/DaniloGarrido/cardumen-deck/discussions
+    about: Para dudas, ideas o conversaciones que no sean un bug concreto.

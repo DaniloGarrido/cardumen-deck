@@ -1,0 +1,50 @@
+name: Bug report
+description: Reportar un comportamiento inesperado
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por reportar. Incluye la mayor cantidad de contexto posible.
+  - type: textarea
+    id: description
+    attributes:
+      label: Descripción
+      description: ¿Qué ocurrió?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Pasos para reproducir
+      placeholder: |
+        1. Abrir ...
+        2. Hacer clic en ...
+        3. Ver ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportamiento esperado
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Versión de Cardumen Deck
+      placeholder: 0.1.0
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Versión de Windows
+      placeholder: Windows 11 24H2
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs o capturas
+      description: Pega logs sin datos personales.
+      render: text

@@ -1,0 +1,52 @@
+[package]
+name = "cardumen-deck"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+publish = false
+description = "Dashboard local para gestionar servicios de desarrollo en Windows"
+license = "MIT"
+authors = ["Cardumen Deck contributors"]
+
+[lib]
+name = "cardumen_deck_lib"
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+tauri = { version = "2", features = [] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+serde_with = { version = "3", features = ["chrono"] }
+thiserror = "1"
+uuid = { version = "1", features = ["v4", "serde"] }
+chrono = { version = "0.4", features = ["serde"] }
+directories = "5"
+dirs-next = "2"
+once_cell = "1"
+tokio = { version = "1", features = ["full"] }
+tracing = "0.1"
+which = "6"
+windows-sys = { version = "0.59", features = [
+    "Win32_Foundation",
+    "Win32_System_JobObjects",
+    "Win32_System_Threading",
+    "Win32_System_Diagnostics_ToolHelp",
+    "Win32_Security",
+    "Win32_Storage_FileSystem",
+] }
+strip-ansi-escapes = "0.2"
+sysinfo = "0.39"
+tauri-plugin-dialog = "2"
+tauri-plugin-opener = "2"
+tauri-plugin-single-instance = "2"
+toml = "1.1.8"
+roxmltree = "0.21.2"
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls"] }
+tauri-plugin-clipboard-manager = "2"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[profile.release]
+strip = true
+lto = true
