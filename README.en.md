@@ -10,7 +10,7 @@
 
 <p align="center">
   <a href="https://github.com/DaniloGarrido/cardumen-deck/actions/workflows/ci.yml"><img src="https://github.com/DaniloGarrido/cardumen-deck/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
-  <a href="https://github.com/DaniloGarrido/cardumen-deck/releases/latest"><img src="https://img.shields.io/github/v/release/DaniloGarrido/cardumen-deck?display_name=tag&sort=semver" alt="Latest release" /></a>
+  <a href="https://github.com/DaniloGarrido/cardumen-deck/releases"><img src="https://img.shields.io/github/v/release/DaniloGarrido/cardumen-deck?display_name=tag&sort=semver" alt="Latest release" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/DaniloGarrido/cardumen-deck" alt="MIT license" /></a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-0078D4" alt="Windows 10/11" />
   <img src="https://img.shields.io/badge/telemetry-none-success" alt="No telemetry" />
@@ -50,7 +50,7 @@ A local Windows dashboard to start, monitor, and operate development services.
 
 Use the latest release:
 
-- [Download the latest version](https://github.com/DaniloGarrido/cardumen-deck/releases/latest)
+- [Download the latest version](https://github.com/DaniloGarrido/cardumen-deck/releases)
 - **Portable:** `CardumenDeck-v*-windows-x64-portable.exe`. No installation required.
 - **Installer:** `CardumenDeck-v*-windows-x64-setup.exe`. NSIS installer.
 - Every release includes `SHA256SUMS.txt`.

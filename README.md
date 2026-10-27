@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="https://github.com/DaniloGarrido/cardumen-deck/actions/workflows/ci.yml"><img src="https://github.com/DaniloGarrido/cardumen-deck/actions/workflows/ci.yml/badge.svg" alt="CI" /></a>
-  <a href="https://github.com/DaniloGarrido/cardumen-deck/releases/latest"><img src="https://img.shields.io/github/v/release/DaniloGarrido/cardumen-deck?display_name=tag&sort=semver" alt="Última release" /></a>
+  <a href="https://github.com/DaniloGarrido/cardumen-deck/releases"><img src="https://img.shields.io/github/v/release/DaniloGarrido/cardumen-deck?display_name=tag&sort=semver" alt="Última release" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/DaniloGarrido/cardumen-deck" alt="Licencia MIT" /></a>
   <img src="https://img.shields.io/badge/platform-Windows%2010%2F11-0078D4" alt="Windows 10/11" />
   <img src="https://img.shields.io/badge/telemetry-none-success" alt="Sin telemetría" />
@@ -51,7 +51,7 @@ Dashboard local para Windows que centraliza el arranque, monitoreo y operación 
 
 La forma recomendada es usar la última release:
 
-- [Descargar la última versión](https://github.com/DaniloGarrido/cardumen-deck/releases/latest)
+- [Descargar la última versión](https://github.com/DaniloGarrido/cardumen-deck/releases)
 - **Portable:** `CardumenDeck-v*-windows-x64-portable.exe`. No requiere instalación.
 - **Instalador:** `CardumenDeck-v*-windows-x64-setup.exe`. Instala la app con NSIS.
 - Cada release incluye `SHA256SUMS.txt` para verificar integridad.
