@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@tauri-apps/cli": "^2",
-    "cross-env": "^7"
+    "cross-env": "^10"
   },
   "engines": {
     "node": ">=24",
