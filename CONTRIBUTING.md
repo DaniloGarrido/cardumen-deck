@@ -4,9 +4,10 @@ Gracias por querer contribuir a Cardumen Deck.
 
 ## Antes de empezar
 
-- Busca issues existentes antes de abrir uno nuevo.
-- Para cambios grandes, abre un issue primero para acordar el enfoque.
+- Busca incidencias existentes antes de abrir una nueva.
+- Para cambios grandes, abre una incidencia primero para acordar el enfoque.
 - No incluyas secretos, tokens, certificados ni rutas personales.
+- No publiques datos de clientes, código confidencial ni información interna.
 
 ## Entorno
 
@@ -28,7 +29,7 @@ npm run dev
 
 ## Verificación
 
-Antes de abrir un PR:
+Antes de abrir una solicitud de extracción (pull request):
 
 ```powershell
 npm run lint
@@ -39,22 +40,46 @@ cargo clippy --manifest-path Backend/Cargo.toml --all-targets -- -D warnings
 cargo test --manifest-path Backend/Cargo.toml --lib
 ```
 
-## Pull requests
+## Contribuciones asistidas por inteligencia artificial
+
+Si usas herramientas de inteligencia artificial:
+
+- revisa el resultado antes de enviarlo;
+- verifica que las licencias y la procedencia sean compatibles;
+- no incluyas código propietario, confidencial o sin permiso;
+- agrega o actualiza pruebas cuando corresponda;
+- describe el cambio y su impacto;
+- no pegues código confidencial en herramientas no aprobadas.
+
+Los mantenedores pueden rechazar contribuciones que no cumplan estos requisitos. Consulta [AI.md](AI.md).
+
+## Seguridad
+
+- No incluyas secretos en incidencias, registros, capturas ni solicitudes de extracción.
+- Para vulnerabilidades, usa GitHub Security Advisories. No abras una incidencia pública con detalles explotables.
+- Si el cambio afecta permisos, red, ejecución de comandos, Git o manejo de archivos, describe el impacto de seguridad.
+- Consulta [SECURITY.md](SECURITY.md).
+
+## Solicitudes de extracción
 
 - Mantén el cambio enfocado.
 - Explica qué problema resuelve.
 - Incluye pasos para probarlo.
-- Adjunta captura o video si cambia la interfaz.
+- Adjunta una captura o un video si cambia la interfaz.
 - Actualiza la documentación si cambia el comportamiento.
+- Indica si el cambio fue asistido por inteligencia artificial.
 
-## Commits
+## Confirmaciones (commits)
 
 Usa mensajes claros y en imperativo. Ejemplos:
 
 - `feat: add service health filters`
 - `fix: keep service actions aligned on narrow cards`
-- `docs: document release signing`
+- `docs: document signing policy`
 
-## Licencia
+## Licencias y procedencia
 
-Al contribuir aceptas que tu aporte se distribuya bajo la licencia MIT del proyecto.
+- Al contribuir aceptas que tu aporte se distribuya bajo la licencia MIT del proyecto.
+- No envíes código con licencias incompatibles.
+- Conserva los avisos de copyright y las licencias de terceros cuando corresponda.
+- Consulta [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).

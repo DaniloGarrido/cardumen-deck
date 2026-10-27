@@ -19,14 +19,18 @@
 <p align="center">
   <a href="README.md">Español</a> ·
   <a href="#download">Download</a> ·
-  <a href="#development">Development</a> ·
-  <a href="CHANGELOG.md">Changelog</a> ·
-  <a href="SECURITY.md">Security</a>
+  <a href="PRIVACY.en.md">Privacy</a> ·
+  <a href="SECURITY.en.md">Security</a> ·
+  <a href="AI.en.md">AI</a> ·
+  <a href="LEGAL.en.md">Legal</a> ·
+  <a href="CHANGELOG.md">Changelog</a>
 </p>
 
 A local Windows dashboard to start, monitor, and operate development services.
 
-> **Status:** early preview (`0.1.x`). Windows-only for now.
+> **Status:** `0.1.x`, evolving and usable for daily development. Windows-only for now.
+
+> **Intended use:** local development tool. It is not a managed service or a production component. You may use it in your real development workflow; you are responsible for commands, credentials, data, and backups.
 
 ![Cardumen Deck dashboard](docs/screenshots/dashboard.webp)
 
@@ -46,9 +50,19 @@ A local Windows dashboard to start, monitor, and operate development services.
 
 ![Cardumen Deck settings](docs/screenshots/settings.webp)
 
+## Privacy and security
+
+- **No telemetry:** no analytics, remote crash reporting, user identifiers, or backend of its own.
+- **Limited network use:** only HTTP/TCP health checks, Git operations, and configured URL opening.
+- **Local data:** configuration, state, and logs are stored on the device. There is no cloud sync.
+- **No encryption at rest:** configuration and logs are not encrypted and may contain secrets.
+- **No sandbox:** commands run with your Windows user privileges.
+
+See [PRIVACY.en.md](PRIVACY.en.md) and [SECURITY.en.md](SECURITY.en.md) for details.
+
 ## Download
 
-Use the latest release:
+Use the latest published version:
 
 - [Download the latest version](https://github.com/DaniloGarrido/cardumen-deck/releases)
 - **Portable:** `CardumenDeck-v*-windows-x64-portable.exe`. No installation required.
@@ -66,7 +80,7 @@ Get-Content .\SHA256SUMS.txt
 
 ## Requirements
 
-### To use the app
+### To use the application
 
 - Windows 10 or 11.
 - WebView2 Runtime. Modern Windows 10/11 already includes it.
@@ -99,7 +113,11 @@ You do not need Node.js or Rust to use the portable or installer.
 
 Cardumen Deck has no remote backend, analytics, or telemetry. Health checks only contact the URLs or ports you configure. Git operations contact the remote only when you run them.
 
-If you are upgrading from an older version, configuration, runtime, and dashboard logs are migrated automatically on first launch.
+Environment variables are stored in `config.json` without encryption. Logs may contain commands, paths, process output, and secrets printed by a service. Review and protect those files before sharing them.
+
+Windows, WebView2, Git, and configured endpoints may have their own policies and connections. See [PRIVACY.en.md](PRIVACY.en.md) for the full data and network table.
+
+If you are upgrading from an older version, configuration, runtime state, and dashboard logs are migrated automatically on first launch.
 
 ## Uninstall
 
@@ -114,10 +132,14 @@ After migration, the old `ServiceDashboard` folders can be deleted if you no lon
 ## Known limitations
 
 - Windows only.
-- No auto-update; download a new release manually.
-- The `0.1.x` release may be unsigned.
+- No auto-update; download a new version manually.
+- The `0.1.x` version may be unsigned.
 - Git features require Git and configured credentials for remote operations.
 - The NSIS installer and portable build share the same local configuration.
+- No sandbox: commands run with user privileges.
+- Configuration and logs are not encrypted.
+- No independent audit, certification, SLA, or bug bounty.
+- No central management or telemetry for managing multiple installations.
 
 ## Troubleshooting
 
@@ -125,7 +147,7 @@ After migration, the old `ServiceDashboard` folders can be deleted if you no lon
 
 This is expected for unsigned binaries. Verify the SHA256 and use “More info” → “Run anyway” only if you trust the file.
 
-### The app does not open or is blank
+### The application does not open or is blank
 
 Check that WebView2 Runtime is installed and up to date. Also check the logs in `%LOCALAPPDATA%\CardumenDeck\logs\`.
 
@@ -135,7 +157,7 @@ Install Git for Windows and make sure `git` is on `PATH`. Restart Cardumen Deck 
 
 ### A service does not start
 
-Check the working directory, command, arguments, and run log from the service card. If the command works in a terminal but not in the app, check `PATH` and environment differences.
+Check the working directory, command, arguments, and run log from the service card. If the command works in a terminal but not in the application, check `PATH` and environment differences.
 
 ### Port 1420 is busy in development
 
@@ -185,21 +207,33 @@ cargo clippy --manifest-path Backend/Cargo.toml --all-targets -- -D warnings
 cargo test --manifest-path Backend/Cargo.toml --lib
 ```
 
-CI runs frontend lint, type-check, frontend build, Rust formatting, Clippy, and backend tests on Windows.
+CI is configured to run frontend lint, type-check, frontend build, Rust formatting, Clippy, and backend tests on Windows.
 
-## Releases and signing
+## Versions and signing
 
-Releases are built by GitHub Actions from a `v*` tag. Each release publishes the portable build, installer, and `SHA256SUMS.txt`.
+The release workflow is configured to build the portable version, installer, and `SHA256SUMS.txt` from a `v*` tag.
 
-Code signing through **SignPath Foundation** is pending approval. Until then, the publisher may be unknown and SmartScreen may warn. See [CODE_SIGNING.md](CODE_SIGNING.md).
+Code signing through **SignPath Foundation** is pending approval. Until then, the publisher may be unknown and SmartScreen may warn. See [CODE_SIGNING.en.md](CODE_SIGNING.en.md).
 
 ## Security
 
-To report vulnerabilities, use GitHub Security Advisories. Do not open a public issue with exploitable details. See [SECURITY.md](SECURITY.md).
+Cardumen Deck uses a restrictive CSP, scoped capabilities, and no remote backend or telemetry. There is no sandbox, encryption at rest, or independent audit. To report vulnerabilities, use GitHub Security Advisories. Do not open a public issue with exploitable details. See [SECURITY.en.md](SECURITY.en.md).
+
+## AI in development
+
+Part of the code and documentation was developed with artificial intelligence assistance. The application does not use artificial intelligence at runtime and does not send prompts to artificial intelligence APIs. Maintainers review and test the code, but artificial intelligence may introduce errors. See [AI.en.md](AI.en.md).
 
 ## Contributing
 
-Read [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
+Read [CONTRIBUTING.en.md](CONTRIBUTING.en.md) and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md). Artificial intelligence-assisted contributions must follow the policy in [AI.en.md](AI.en.md).
+
+## Support
+
+Support is community-based and best effort. There is no SLA, commercial support, or bug bounty. See [SUPPORT.en.md](SUPPORT.en.md).
+
+## Legal notice
+
+Cardumen Deck is distributed under the MIT license. The software is provided “as is”, without warranty, and use is at your own risk. There is no affiliation with Microsoft, Tauri, Vue, Rust, Lucide, or GitHub. See [LEGAL.en.md](LEGAL.en.md).
 
 ## Structure
 
@@ -216,8 +250,14 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT
 
 ## Technical documentation
 
-- [Architecture](docs/ARCHITECTURE.md)
-- [Signing policy](CODE_SIGNING.md)
+- [Architecture](docs/ARCHITECTURE.en.md)
+- [Privacy](PRIVACY.en.md)
+- [Security](SECURITY.en.md)
+- [AI in development](AI.en.md)
+- [Legal notice](LEGAL.en.md)
+- [Third-party notices](THIRD_PARTY_NOTICES.en.md)
+- [Support](SUPPORT.en.md)
+- [Signing policy](CODE_SIGNING.en.md)
 - [Changelog](CHANGELOG.md)
 
 ## Credits

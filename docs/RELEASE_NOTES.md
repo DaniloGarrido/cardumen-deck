@@ -1,12 +1,12 @@
 ## Cardumen Deck v0.1.0
 
-Primera preview pública de Cardumen Deck: un dashboard local para arrancar, monitorear y operar servicios de desarrollo en Windows.
+Primera versión preliminar pública de Cardumen Deck: un panel local para iniciar, monitorear y operar servicios de desarrollo en Windows.
 
 ### Descargas
 
 - `CardumenDeck-v0.1.0-windows-x64-portable.exe`: no requiere instalación.
 - `CardumenDeck-v0.1.0-windows-x64-setup.exe`: instalador NSIS.
-- `SHA256SUMS.txt`: hashes para verificar ambos archivos.
+- `SHA256SUMS.txt`: sumas de verificación para ambos archivos.
 
 ### Requisitos
 
@@ -16,11 +16,14 @@ Primera preview pública de Cardumen Deck: un dashboard local para arrancar, mon
 
 ### Notas
 
-- Esta release puede estar sin firma digital. Windows SmartScreen puede mostrar una advertencia.
+- Esta versión puede estar sin firma digital. Windows SmartScreen puede mostrar una advertencia.
 - Verifica el SHA256 antes de ejecutar.
-- No hay auto-update; descarga una release nueva manualmente.
-- La app no tiene telemetría ni backend remoto.
+- No hay actualización automática; descarga una versión nueva manualmente.
+- La aplicación no tiene telemetría ni backend remoto. Consulta [PRIVACY.md](../PRIVACY.md).
 - La firma con SignPath Foundation está pendiente de aprobación.
+- Consulta los límites de seguridad en [SECURITY.md](../SECURITY.md).
+- El uso de inteligencia artificial en el desarrollo se documenta en [AI.md](../AI.md).
+- Consulta el aviso legal en [LEGAL.md](../LEGAL.md).
 
 ### Verificación
 
