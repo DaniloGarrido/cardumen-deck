@@ -105,7 +105,7 @@ jobs:
           $hashes | Set-Content "dist/SHA256SUMS.txt" -Encoding ascii
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: CardumenDeck-${{ github.ref_name }}-windows-x64
           path: dist/*
