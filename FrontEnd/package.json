@@ -24,7 +24,7 @@
   "devDependencies": {
     "@eslint/js": "^9.39.5",
     "@tauri-apps/cli": "^2",
-    "@types/node": "^24",
+    "@types/node": "^26",
     "@vitejs/plugin-vue": "^6",
     "@vue/tsconfig": "^0",
     "eslint": "^9",
