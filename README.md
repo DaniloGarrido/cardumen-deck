@@ -210,7 +210,7 @@ cargo clippy --manifest-path Backend/Cargo.toml --all-targets -- -D warnings
 cargo test --manifest-path Backend/Cargo.toml --lib
 ```
 
-CI está configurado para ejecutar lint, verificación de tipos, compilación de la interfaz, formato, Clippy y pruebas del backend en Windows.
+CI ejecuta lint, verificación de tipos, compilación de la interfaz, formato, Clippy y pruebas del backend en Windows.
 
 ## Versiones y firma
 

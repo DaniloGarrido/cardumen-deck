@@ -16,14 +16,14 @@ Primera versión preliminar pública de Cardumen Deck: un panel local para inici
 
 ### Notas
 
-- Esta versión puede estar sin firma digital. Windows SmartScreen puede mostrar una advertencia.
+- Esta versión preliminar no está firmada digitalmente. Windows SmartScreen puede mostrar una advertencia.
 - Verifica el SHA256 antes de ejecutar.
 - No hay actualización automática; descarga una versión nueva manualmente.
-- La aplicación no tiene telemetría ni backend remoto. Consulta [PRIVACY.md](../PRIVACY.md).
-- La firma con SignPath Foundation está pendiente de aprobación.
-- Consulta los límites de seguridad en [SECURITY.md](../SECURITY.md).
-- El uso de inteligencia artificial en el desarrollo se documenta en [AI.md](../AI.md).
-- Consulta el aviso legal en [LEGAL.md](../LEGAL.md).
+- La aplicación no tiene telemetría ni backend remoto. Consulta [PRIVACY.md](https://github.com/DaniloGarrido/cardumen-deck/blob/v0.1.0/PRIVACY.md).
+- La firma con SignPath Foundation se aplicará en una versión posterior.
+- Consulta los límites de seguridad en [SECURITY.md](https://github.com/DaniloGarrido/cardumen-deck/blob/v0.1.0/SECURITY.md).
+- El uso de inteligencia artificial en el desarrollo se documenta en [AI.md](https://github.com/DaniloGarrido/cardumen-deck/blob/v0.1.0/AI.md).
+- Consulta el aviso legal en [LEGAL.md](https://github.com/DaniloGarrido/cardumen-deck/blob/v0.1.0/LEGAL.md).
 
 ### Verificación
 
