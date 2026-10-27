@@ -38,7 +38,7 @@ Cada release adjunta `SHA256SUMS.txt` para verificar la integridad del portable 
 ## Checklist para SignPath
 
 - [x] Licencia OSI aprobada (MIT).
-- [ ] Repositorio publico.
+- [x] Repositorio publico.
 - [x] README y documentacion de build.
 - [x] Politica de firma creada (este archivo).
 - [ ] Releases construidas desde GitHub Actions (portable + instalador).
