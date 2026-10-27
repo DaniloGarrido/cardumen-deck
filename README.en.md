@@ -207,13 +207,20 @@ cargo clippy --manifest-path Backend/Cargo.toml --all-targets -- -D warnings
 cargo test --manifest-path Backend/Cargo.toml --lib
 ```
 
-CI is configured to run frontend lint, type-check, frontend build, Rust formatting, Clippy, and backend tests on Windows.
+CI runs frontend lint, type-check, frontend build, Rust formatting, Clippy, and backend tests on Windows.
 
-## Versions and signing
+## Code signing policy
 
-The release workflow is configured to build the portable version, installer, and `SHA256SUMS.txt` from a `v*` tag.
+The release workflow builds the portable version, installer, and `SHA256SUMS.txt` from a `v*` tag.
 
-Code signing through **SignPath Foundation** is pending approval. Until then, the publisher may be unknown and SmartScreen may warn. See [CODE_SIGNING.en.md](CODE_SIGNING.en.md).
+Signed versions will be published with free code signing provided by [SignPath.io](https://about.signpath.io), certificate by [SignPath Foundation](https://signpath.org).
+
+- **Author, reviewer, and approver:** [@DaniloGarrido](https://github.com/DaniloGarrido), repository owner.
+- **Privacy:** [PRIVACY.en.md](PRIVACY.en.md).
+- **Approval:** each signed release requires manual approval.
+- **Scope:** the portable executable and the NSIS installer are signed; third-party artifacts are not.
+
+Version `0.1.0` was published unsigned. Signing will start with version `0.1.1`. See the full policy in [CODE_SIGNING.en.md](CODE_SIGNING.en.md).
 
 ## Security
 

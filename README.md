@@ -212,11 +212,20 @@ cargo test --manifest-path Backend/Cargo.toml --lib
 
 CI ejecuta lint, verificación de tipos, compilación de la interfaz, formato, Clippy y pruebas del backend en Windows.
 
-## Versiones y firma
+## Code signing policy
 
-El flujo de trabajo de publicación está configurado para construir la versión portable, el instalador y `SHA256SUMS.txt` a partir de una etiqueta `v*`.
+El flujo de trabajo de publicación construye la versión portable, el instalador y `SHA256SUMS.txt` a partir de una etiqueta `v*`.
 
-La firma de código con **SignPath Foundation** está pendiente de aprobación. Mientras tanto, el editor visible puede ser desconocido y SmartScreen puede advertir. Ver [CODE_SIGNING.md](CODE_SIGNING.md).
+Las versiones firmadas se publicarán con firma de código gratuita proporcionada por [SignPath.io](https://about.signpath.io), con certificado de [SignPath Foundation](https://signpath.org).
+
+> Free code signing provided by SignPath.io, certificate by SignPath Foundation.
+
+- **Autor, revisor y aprobador:** [@DaniloGarrido](https://github.com/DaniloGarrido), propietario del repositorio.
+- **Privacidad:** [PRIVACY.md](PRIVACY.md).
+- **Aprobación:** cada release firmada requiere aprobación manual.
+- **Alcance:** se firman el ejecutable portable y el instalador NSIS; no se firman artefactos de terceros.
+
+La versión `0.1.0` se publicó sin firma. La firma se aplicará desde la versión `0.1.1`. Ver la política completa en [CODE_SIGNING.md](CODE_SIGNING.md).
 
 ## Seguridad
 

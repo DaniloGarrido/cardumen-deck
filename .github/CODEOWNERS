@@ -1,1 +1,9 @@
+# Default owner
 * @DaniloGarrido
+
+# Signing-critical files
+/.github/workflows/release.yml @DaniloGarrido
+/Backend/tauri.conf.json @DaniloGarrido
+/CODE_SIGNING.md @DaniloGarrido
+/CODE_SIGNING.en.md @DaniloGarrido
+/docs/RELEASE_NOTES.md @DaniloGarrido

@@ -12,7 +12,7 @@ y el proyecto usa versionado semántico.
 - Documentación de privacidad, seguridad, inteligencia artificial, aviso legal, soporte y avisos de terceros.
 - Aclaraciones sobre telemetría, red, datos locales, cifrado, entorno aislado y límites de seguridad.
 
-## [0.1.0] - 2026-10-26
+## [0.1.0] - 2026-10-27
 
 ### Added
 
