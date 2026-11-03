@@ -33,6 +33,6 @@
     "typescript": "~6",
     "typescript-eslint": "^8.72.1",
     "vite": "^8",
-    "vue-tsc": "^3"
+    "vue-tsc": "^3.3.14"
   }
 }
