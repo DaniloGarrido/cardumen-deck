@@ -27,7 +27,7 @@
     "@types/node": "^24",
     "@vitejs/plugin-vue": "^6",
     "@vue/tsconfig": "^0",
-    "eslint": "^9",
+    "eslint": "^10",
     "eslint-plugin-vue": "^10",
     "globals": "^14.0.0",
     "typescript": "~6",
